@@ -72,7 +72,7 @@
         ctx.rotate(1 - angle);
         ctx.translate(-p2x, -p2y);
 
-        return $(canvas);
+        return $(canvas).addClass('curved_arrow');
     }
 
     function quadraticCurveMinMax(p0, p1, p2){
