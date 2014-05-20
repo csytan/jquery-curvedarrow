@@ -1,5 +1,5 @@
 (function($){
-    $.curvedArrow = function(options){
+    $.fn.curvedArrow = function(options){
         var settings = $.extend({
             p0x: 50,
             p0y: 50,
@@ -11,10 +11,10 @@
             lineWidth: 10,
             strokeStyle: 'rgb(245,238,49)'
         }, options);
-
+        
         var canvas = document.createElement('canvas');
-        document.body.appendChild(canvas);
-
+        $(canvas).appendTo(this);
+        
         var x_min_max = quadraticCurveMinMax(settings.p0x, settings.p1x, settings.p2x);
         var y_min_max = quadraticCurveMinMax(settings.p0y, settings.p1y, settings.p2y);
         var padding = settings.size - settings.lineWidth;
@@ -87,4 +87,3 @@
         return [Math.round(min), Math.round(max)];
     }
 }(jQuery));
-
